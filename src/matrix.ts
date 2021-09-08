@@ -101,7 +101,11 @@ function print()
         let output:any
         for (let index2 = 0; index2 < 4; index2++) {
             const element = ctm[index1][index2];
-            output = output + element
+            if (index2 == 0) {
+                output = element
+            }else{
+                output = output + element
+            }
             if (index2 + 1 < 4 ) {
                 output = output + ", "
             }
