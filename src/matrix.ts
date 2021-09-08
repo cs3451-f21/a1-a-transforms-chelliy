@@ -7,7 +7,7 @@ var ctm:number[][]
 
 
 function multiplication(given:number[][]){
-    var newCtm:number[][] = []
+    var newCtm:number[][] = [[],[],[],[]]
     for (let index1 = 0; index1 < 4; index1++) {
         for (let index2 = 0; index2 < 4; index2++) {
             var sum:number = ctm[index1][0] * given[0][index2] + ctm[index1][1] * given[1][index2] 
@@ -26,7 +26,7 @@ function init()
         [0, 1, 0, 0], 
         [0, 0, 1, 0], 
         [0, 0, 0, 1]
-    ]
+    ];
 }
 
 // multiply the current matrix by the translation
@@ -97,14 +97,12 @@ function print()
 {
     // add code here!
     // use `console.log("something")` to print something to the browser console.
-    var row:number = ctm.length
-    var colum:number = ctm[0].length
-    for (let index1 = 0; index1 < row; index1++) {
+    for (let index1 = 0; index1 < 4; index1++) {
         let output:any
-        for (let index2 = 0; index2 < colum; index2++) {
+        for (let index2 = 0; index2 < 4; index2++) {
             const element = ctm[index1][index2];
             output = output + element
-            if (index2 + 1 < colum ) {
+            if (index2 + 1 < 4 ) {
                 output = output + ", "
             }
         }
@@ -120,10 +118,8 @@ function print()
 function currentMatrix() : number[]
 {
     var output:number[] =[]
-    var row:number = ctm.length
-    var colum:number = ctm[0].length
-    for (let index1 = 0; index1 < row; index1++) {
-        for (let index2 = 0; index2 < colum; index2++) {
+    for (let index1 = 0; index1 < 4; index1++) {
+        for (let index2 = 0; index2 < 4; index2++) {
             const element = ctm[index1][index2];
             output.push(element)
         }
